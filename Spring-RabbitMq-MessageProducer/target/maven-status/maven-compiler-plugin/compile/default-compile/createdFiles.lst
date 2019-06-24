@@ -1,0 +1,4 @@
+com/java/rabbitmq/messageproducer/Messageproducer.class
+com/java/rabbitmq/web/WebController.class
+com/java/rabbitmq/messageproducer/MessageConsumer.class
+com/java/rabbitmq/SpringRabbitMqMessageProducerApp.class
