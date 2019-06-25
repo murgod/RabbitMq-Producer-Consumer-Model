@@ -23,3 +23,8 @@ This project is a producer-consumer model with RabbitMq cluster configuration.
     #RabbitMq-Producer-Consumer-Model/Spring-RabbitMq-MessageConsumer$ mvn clean install; mvn spring-boot:run
     
  4.Analyse results
+ 
+ 
+ # References
+ https://github.com/bijukunjummen/docker-rabbitmq-cluster
+ 
