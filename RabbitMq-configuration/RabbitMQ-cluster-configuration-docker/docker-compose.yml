@@ -4,16 +4,14 @@ services:
     image: rabbitmq:3-management
     hostname: rabbit1
     environment:
-      RABBITMQ_ERLANG_COOKIE: "secret string"
+      RABBITMQ_ERLANG_COOKIE: "Rand0mStr1ng"
       RABBITMQ_NODENAME: rabbit1
+      TCP_PORTS: "5672, 15672"
     volumes:
       - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
       - "./definitions.json:/etc/rabbitmq/definitions.json"
     ports:
-      - "5369:4369"
-      - "5671:5671"
       - "5672:5672"
-      - "15671:15671"
       - "15672:15672"
       - "25672:25672"
 
@@ -23,37 +21,51 @@ services:
     depends_on:
       - rabbit1
     environment:
-      RABBITMQ_ERLANG_COOKIE: "secret string"
+      RABBITMQ_ERLANG_COOKIE: "Rand0mStr1ng"
       RABBITMQ_NODENAME: rabbit2
+      TCP_PORTS: "5672"
     volumes:
       - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
       - "./definitions.json:/etc/rabbitmq/definitions.json"
     ports:
-      - "6369:4369"
-      - "6671:5671"
       - "6672:5672"
-      - "35671:15671"
       - "35672:15672"
       - "45672:25672"
     
-  rabbit3:
-    image: rabbitmq:3-management
-    hostname: rabbit3
-    depends_on:
-      - rabbit1
-    environment:
-      RABBITMQ_ERLANG_COOKIE: "secret string"
-      RABBITMQ_NODENAME: rabbit3
+# rabbit3:
+#    image: rabbitmq:3-management
+#    hostname: rabbit3
+#    depends_on:
+#      - rabbit1
+#    environment:
+#      RABBITMQ_ERLANG_COOKIE: "Rand0mStr1ng"
+#      RABBITMQ_NODENAME: rabbit3
+#      TCP_PORTS: "5672"
+#    volumes:
+#      - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
+#      - "./definitions.json:/etc/rabbitmq/definitions.json"
+#    ports:
+#      - "8672:5672"
+#      - "55672:15672"
+#      - "55772:25672"
+
+  haproxy:
+    image: dockercloud/haproxy:latest
     volumes:
-      - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
-      - "./definitions.json:/etc/rabbitmq/definitions.json"
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      MODE: tcp
+      LOG_LEVEL: "info"
+      BALANCE: static-rr
+    expose:
+      - 5673
+    links:
+      - rabbit1
+      - rabbit2
+ #     - rabbit3
     ports:
-      - "7369:4369"
-      - "7671:5671"
-      - "8672:5672"
-      - "45671:15671"
-      - "55672:15672"
-      - "55772:25672"
+      - '80:80'
+      - '5673:5672'
 
 networks:
   default:

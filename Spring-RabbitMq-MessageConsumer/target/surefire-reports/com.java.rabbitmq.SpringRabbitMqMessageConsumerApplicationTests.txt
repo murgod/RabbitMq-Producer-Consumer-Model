@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.java.rabbitmq.SpringRabbitMqMessageConsumerApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.824 sec - in com.java.rabbitmq.SpringRabbitMqMessageConsumerApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.006 sec - in com.java.rabbitmq.SpringRabbitMqMessageConsumerApplicationTests

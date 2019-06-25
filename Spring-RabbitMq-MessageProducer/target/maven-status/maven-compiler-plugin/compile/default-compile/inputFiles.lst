@@ -1,4 +1,4 @@
-/Users/akmurgod/work/Rabbitmq_POC/SpringRabbitMqProducer/src/main/java/com/java/rabbitmq/messageproducer/Messageproducer.java
-/Users/akmurgod/work/Rabbitmq_POC/SpringRabbitMqProducer/src/main/java/com/java/rabbitmq/web/WebController.java
-/Users/akmurgod/work/Rabbitmq_POC/SpringRabbitMqProducer/src/main/java/com/java/rabbitmq/SpringRabbitMqMessageProducerApp.java
-/Users/akmurgod/work/Rabbitmq_POC/SpringRabbitMqProducer/src/main/java/com/java/rabbitmq/messageproducer/MessageConsumer.java
+/Users/akmurgod/work/Rabbitmq_POC/RabbitMq-Producer-Consumer-Model/Spring-RabbitMq-MessageProducer/src/main/java/com/java/rabbitmq/web/WebController.java
+/Users/akmurgod/work/Rabbitmq_POC/RabbitMq-Producer-Consumer-Model/Spring-RabbitMq-MessageProducer/src/main/java/com/java/rabbitmq/messageproducer/MessageConsumer.java
+/Users/akmurgod/work/Rabbitmq_POC/RabbitMq-Producer-Consumer-Model/Spring-RabbitMq-MessageProducer/src/main/java/com/java/rabbitmq/messageproducer/Messageproducer.java
+/Users/akmurgod/work/Rabbitmq_POC/RabbitMq-Producer-Consumer-Model/Spring-RabbitMq-MessageProducer/src/main/java/com/java/rabbitmq/SpringRabbitMqMessageProducerApp.java
